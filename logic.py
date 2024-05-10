@@ -3,7 +3,13 @@ from gui import *
 import math
 
 
-class Logic(QMainWindow, Ui_Calculator):
+class Logic(QMainWindow, Ui_Calculator) -> None:
+        """
+        Reads input from input box, uses it to calculate the area
+        It then sets the output label to the calculated area.
+        Also reads exceptions and handles them
+        :return: None
+        """
     def __init__(self):
         super().__init__()
         self.setupUi(self)
