@@ -199,7 +199,7 @@ class Ui_Calculator(object):
         self.radius_input.hide()
 
         # Calculate Area button
-        self.calculate_area_button = QtWidgets.QPushButton(parent=self.centralwidget, clicked=lambda: self.calculate_area())
+        self.calculate_area_button = QtWidgets.QPushButton(parent=self.centralwidget)
         self.calculate_area_button.setGeometry(QtCore.QRect(420, 380, 160, 40))
         font = QtGui.QFont()
         font.setPointSize(12)
@@ -313,21 +313,6 @@ class Ui_Calculator(object):
             pass
         else:
             self.output_label.setText(f'{screen}.')
-
-    def calculate_area(self) -> None:
-        """
-        This function
-        :return:
-        """
-        if self.rect_radio.isChecked():
-            length = float(self.length_input.text())
-            width = float(self.width_input.text())
-            area = length * width
-            self.output_label.setText(str(area))
-        elif self.circle_radio.isChecked():
-            radius = float(self.radius_input.text())
-            area = 3.14 * (radius ** 2)
-            self.output_label.setText(str(area))
 
     def retranslateUi(self, Calculator) -> None:
         """
